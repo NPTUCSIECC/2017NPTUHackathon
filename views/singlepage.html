@@ -73,13 +73,14 @@
 		<div class="container ">
 			<div class="row">
 				<div class="main">
-					<h1 class="page-header">地理位置</h1>
+					<h1 class="page-header">交通資訊</h1>
 					<div class="row placeholders">
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
+            <div class="alert alert-success" role="alert">
+              <dl class="dl-horizontal">
+                <h3>開車預計時數：</h3>
+                <span id="car"></span>
+              </dl>
+            </div>
 					</div>
 				</div>
 			</div>
@@ -119,5 +120,28 @@
 		</nav>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"> </script>
 		<script src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&language=zh-TW"></script>
+    <script>
+        $(function () {
+            Distance();
+        });
+        function Distance() {
+            var start = "屏東大學";
+            var end = "山地門";
+            var request = {
+                origin: start,
+                destination: end,
+                travelMode: google.maps.DirectionsTravelMode.DRIVING
+            };
+            var directionsService = new google.maps.DirectionsService();
+            directionsService.route(request, function (response, status) {
+                if (status == google.maps.DirectionsStatus.OK) {
+                    var route = response.routes[0];
+                    document.getElementById('car').innerHTML = route.legs[0].duration.text;
+                }
+            });
+        }
+
+    </script>
 	</body>
 </html>

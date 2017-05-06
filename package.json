@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/NPTUCSIECC/APIServer#readme",
   "dependencies": {
+    "@google/maps": "^0.3.1",
     "express": "^4.15.2",
     "fs": "0.0.1-security",
     "request": "^2.81.0"
