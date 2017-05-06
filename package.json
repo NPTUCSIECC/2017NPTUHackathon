@@ -18,6 +18,7 @@
   "homepage": "https://github.com/NPTUCSIECC/APIServer#readme",
   "dependencies": {
     "express": "^4.15.2",
+    "express-promise": "^0.4.0",
     "fs": "0.0.1-security",
     "request": "^2.81.0"
   }
