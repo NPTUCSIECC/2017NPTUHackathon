@@ -6,7 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>遇見屏東</title>
 		<script src="http://bl.ocks.org/brattonc/raw/5e5ce9beee483220e2f6/liquidFillGauge.js" language="JavaScript"></script>
-		    <script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script>
+
+
+		<script src="js/liquidFillGauge.js"></script>
+		<script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script>
+
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/dashborad.css" rel="stylesheet">
 	</head>
@@ -89,9 +93,10 @@
 			<div class="row">
 				<div class="main">
 					<h1 class="page-header">環境資訊</h1>
-					<div class="row placeholders">					
+					<div class="row placeholders">
+						<div class="col-xs-6 col-md-6">					
 						<div>
-						<h4> 現在濕度：</h4><br>
+						<h4> PM2.5：</h4><br>
 						<svg id="fillgauge3" width="19%" height="200"></svg>
 						<script language="JavaScript">
 						function Moisture(moisture)
@@ -103,15 +108,61 @@
 							config2.waveAnimateTime = 2000;
 							config2.waveHeight = 0.3;
 							config2.waveCount = 1;
+
+							if(moisture<2.5){
+								config2.waveColor="#00BB00";
+								config2.circleColor="#00BB00";
+
+							}else if(moisture<10){
+
+								config2.waveColor="#FF8000";
+								config2.circleColor="#FF8000";
+							}else if(moisture <70){
+								config2.waveColor="#EA0000";
+								config2.circleColor="#EA0000";
+
+							}else{
+								config2.waveColor="#4B0091";
+								config2.circleColor="#4B0091";
+
+							}
+
 							var gauge3 = loadLiquidFillGauge("fillgauge3",moisture,config2);
 						}
-						Moisture(29);
+						Moisture(80);
 						</script>
 						</div>
+						</div>
+
+
+						
+						<div class="col-xs-6 col-md-6">					
+						<h4> 現在濕度：</h4><br>
+						<svg id="fillgauge4" width="19%" height="200"></svg>
+						<script language="JavaScript">
+						function Moisture(moisture)
+						{
+
+							var config2 = liquidFillGaugeDefaultSettings_1(moisture);
+							config2.circleThickness = 0.1;
+							config2.circleFillGap = 0.2;
+							config2.textVertPosition = 0.8;
+							config2.waveAnimateTime = 2000;
+							config2.waveHeight = 0.3;
+							config2.waveCount = 1;
+							var gauge3 = loadLiquidFillGauge_1("fillgauge4",moisture,config2);
+						}
+
+						Moisture(50);
+						</script>
+						</div>
+						</div>
+
 					</div>
 				</div>
 			</div>
 		</div>
+
 		<div class="container ">
 			<div class="row">
 				<div class="main">
