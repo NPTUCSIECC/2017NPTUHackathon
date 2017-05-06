@@ -5,6 +5,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>遇見屏東</title>
+		<script src="http://bl.ocks.org/brattonc/raw/5e5ce9beee483220e2f6/liquidFillGauge.js" language="JavaScript"></script>
+		    <script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script>
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/dashborad.css" rel="stylesheet">
 	</head>
@@ -86,26 +88,24 @@
 			<div class="row">
 				<div class="main">
 					<h1 class="page-header">環境資訊</h1>
-					<div class="row placeholders">
-						<div class="col-md-6">
-						<div class="col-md-6">
-						現在氣溫：
-						</div>
-							<div class="progress">
-								<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">60% Complete
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-						<div class="col-md-6">
-							懸浮微粒指標：
-							</div>
-							<div class="col-md-6">
-							<div class="progress">
-								<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">40% Complete
-								</div>
-							</div>
-							</div>
+					<div class="row placeholders">					
+						<div>
+						<h4> 現在濕度：</h4><br>
+						<svg id="fillgauge3" width="19%" height="200"></svg>
+						<script language="JavaScript">
+						function Moisture(moisture)
+						{
+							var config2 = liquidFillGaugeDefaultSettings();
+							config2.circleThickness = 0.1;
+							config2.circleFillGap = 0.2;
+							config2.textVertPosition = 0.8;
+							config2.waveAnimateTime = 2000;
+							config2.waveHeight = 0.3;
+							config2.waveCount = 1;
+							var gauge3 = loadLiquidFillGauge("fillgauge3",moisture,config2);
+						}
+						Moisture(29);
+						</script>
 						</div>
 					</div>
 				</div>
