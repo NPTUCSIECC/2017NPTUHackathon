@@ -1,8 +1,22 @@
 const express = require('express');
 const request = require('request');
+var path = require('path');
 const fs = require("fs");
 
 const app = express();
+
+app.use(express.static('views'));
+app.set('view engine', 'ejs'); 
+
+app.get('/',function(req,res){
+  res.sendFile('shanchuan.html', { root: __dirname+'/views'  });
+})
+
+app.get('/pageinfo',function(req,res){
+  res.render('views/singlepage', {
+
+  })
+})
 
 app.get('/test', function (req, res) {
   let pm25Url = 'http://opendata.epa.gov.tw/ws/Data/ATM00625/?%24skip=0&%24top=1000&format=json';

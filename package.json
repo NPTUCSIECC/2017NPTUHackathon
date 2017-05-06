@@ -21,6 +21,7 @@
     "express": "^4.15.2",
     "express-promise": "^0.4.0",
     "fs": "0.0.1-security",
+    "path": "^0.12.7",
     "request": "^2.81.0"
   }
 }
