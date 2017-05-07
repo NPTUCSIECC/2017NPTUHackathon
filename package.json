@@ -1,0 +1,28 @@
+{
+  "name": "apiserver",
+  "version": "1.0.0",
+  "description": "2017NPTUHackathon restful api, base on express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NPTUCSIECC/APIServer.git"
+  },
+  "author": "VagrantPi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NPTUCSIECC/APIServer/issues"
+  },
+  "homepage": "https://github.com/NPTUCSIECC/APIServer#readme",
+  "dependencies": {
+    "@google/maps": "^0.3.1",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "express-promise": "^0.4.0",
+    "fs": "0.0.1-security",
+    "path": "^0.12.7",
+    "request": "^2.81.0"
+  }
+}
